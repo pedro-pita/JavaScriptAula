@@ -2,17 +2,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>aula 2-js</title>
-		<script>
-			
-		</script>	
+		<title>Aula 2 de JavaScript</title>
+		<script 
+			type = "text/javascript" 
+			src="./js/aula2.js">
+		</script>
 	</head>
-	<body onload="alert('Pagina Carregada');">
-		<p>Nome:Afonso</p>
+	<body>
+		<p>Nome: Pedro</p>
 		<img id="cristovao" onclick="alert('Img clicada!!!');" src="./aula2/a.jpg" alt="Walt"/>
 	</body>
-</html>	
-
+</html>
 <!--
 	Eventos
 	Em linguagem orientada a objetos é comum a manipulação de eventos,isto é, qualquer reação ou ação que executara um procedimento.
@@ -36,5 +36,106 @@
 	Importante: case sensitive(), nao podemos instanciar nome resevados, new (palavra reservada), _new
 	Exemplo pratico de atribuicao multi_valor
 	var campo_1 = campo_2 = campo_3 = 12;
-	variaveis inteiras(INTEGER)
--->
+	O js e uma linguagem de tipagem dinamica, isto e, nao e necessario especificar o tipo de dados duma variavel aquando da sua declaracao, os tipos sao automaticamente convertidos coforme a atribuicao
+	/*Dinamizacao das variaveis */
+	variaveis inteiras(INTEGER) ou Number
+	Representam numeros positivos, negativos ou fracionarios
+	Exemplos:
+	var a = 500;
+	var b = -32;
+	varz = 0.52;
+	Ponto flutuante (nocao cientifica)
+	Este literal, tambem como notacao cientifica representamos:
+	var nc = 2.34e4; // 2.34e4 e multiplicado por dez a  quarta pontecia: ou 2,34 * 10000
+	BOOLEAN;
+	Este literal representa valores logicos:
+	true ou 1;
+	false ou 0;
+	var b = true;
+		b = false;
+		b = 12;
+	---------------------------------------------------
+	STRING
+	Este literal representa qualquer cadeia de caracteres envolvido por aspas"" ou apostrofo''.
+	var str = "lourenco";
+	var str_1 = "";//vazio
+	var str_2;//null
+	Sendo numeros, acontece que a conversa e feita de forma automatica.
+	var v = "12";
+	<>
+	var v_1 = 12;
+	**********************************************
+	CARACTERES ESPECIAIS
+	Caracteres especificos para serem interpretados dentro duma string.
+	\n -> quebra de linha
+	\t -> tabulacao
+	\f -> inserir barra
+	\\ - > barra invertida
+	------------------------------------------
+	OPERADORES
+	------------------------------------------
+	INCREMENTO E DECREMENTO
+	SINTAXE:
+		variavel++ ou ++variavel;
+		variavel-- ou --variavel;
+	RELACAO DOS OPERADORES(sobrecarga dos operadores)
+		+;-;*;/;%
+	EXEMPLO:
+		var x = 12;
+			x = 4;// x = x + 4
+			x++; // x += 1; ou x = x + 1;
+	------------------------------------------
+	OPERADORES LOGICOS
+	Para estes operadores, são exigidos valores booleanos,  como operadores, retorna um valor logivo, && ou AND(e) -> verdade se todas as expressões forem verdade
+	TABELA
+	V V = V
+	V F = F
+	F V = F
+	F F = F
+	
+	Tres expressões
+	V V V = V
+	V F F = F
+	F V F = F
+	F F F = F
+
+	|| ou OR(e) -> verdade se uma das expressões forem verdade
+	TABELA
+	V V = V
+	V F = V
+	F V = V
+	F F = F
+	
+	Tres expressões
+	V V V = V
+	V F F = V
+	F V F = V
+	F F F = F
+	
+	!ou NOT(negação) -> nega a expressão, se for verdade torna mentira
+	V -> F
+	F -> F 
+	Exemplo:
+		var x = 1;	
+	
+	Operador Ternario SINTAXE
+		(Expressao) ? verade : falso
+		var num = 1;
+		var test = (num == 1) ? "Igual" : "Diferente");
+		Alert(text);
+		Varios var inicivializadas na mesma atribuição
+		var num = 1, nome = "sergio", morada = "funchal";
+		---------------------
+		Constantes
+		Valor que nunca se altera no processamento da app. Por norma, devemos aplicar maiusculas a constantes de modo a facilmente identificarmos,
+		Sintanxe: const nome = valor_constante;
+		Exemplo:
+		const SEMANA = 7;
+		alert(SEMANA);
+	
+	EXTERNO
+	<script 
+		type = "text/javascript" 
+		src="./js/aula1.js">
+	</script>
+	-->
