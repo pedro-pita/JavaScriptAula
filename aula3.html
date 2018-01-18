@@ -13,13 +13,94 @@
 </html>	
 
 <!--
-	Estruturas
-	
+	ESTRUTURAS
+	----------------------
+	Contexto de intrução:
+		Numa intruçao simples, aninhamos o codigo, isto é sem bloco de contexto.
+		Numa instrução em bloco mais que um comando), delimitamos a intruçao com (()).
+	--------------------------------------------
 	Estruturas condicionais - processa resultado em função de um determinado teste
-	
+
 	SINTAXE:
 	se(condiçao) entao fazer
 	senão entao fazer
 	Codigo:
 	if(condiçao)
+	
+	EXEMPLO
+	var num =1;
+	if( num > 1){
+		ALERT("O valor de teste é maior que 1.");
+	}
+	//Ex 2 ->TESTE PARA OU IMPAR
+ 	num = 20;
+	if((num %2 ) == 0){
+		document.write("<p>O valor é par.</p>");
+	}
+	-------------------------------------------
+	TESTE DE CONDIÇÃO VERDADEIRA(BOOLEAN)
+	var verdadeira = true;
+	if(verdade){
+		alert("Entrou no circulo, uma vez que a condiçao é verdadeir.");
+	}
+	-------------------------------------------
+	INTRUÇAO COMPLETA DE IF/ELSE SIMPLES
+	var num = 3;
+	if(num == 1)(alert("num igual a 1.");)
+	else if(num == 2)(alert("num igual a 2.");)
+	else if(num == 3)(alert("num igual a 3.");)
+	else if(num == 4)(alert("num igual a 4.");)
+	else (alert("num diferente de 1,2,3,4");)
+	-------------------------------------------
+	Com input (entrada) externo
+	var idade = prompt("Caixa de input","Insira a idade.");
+	if(idade < 10 )(alert("A idade é superior a 10.");)
+	else if(idade > 10 && idade <= 20)(alert("A idade é superior a 11 e menor a 20.");)
+	else if(idade > 21 && idade <= 30)(alert("A idade é superior a 21 e menor a 30.");)
+	else if(idade > 31)(alert("A idade é superior a 31.");)
+	else (alert("A idade é superior a 31.");)
+	------------------------------------------
+	Intrução if encadeadas
+	idade = 34;
+	if(idade < 10 ){
+		(alert("A idade é superior a 10.");)
+	}else if(idade > 10 && idade <= 20){
+		(alert("A idade é superior a 11 e menor a 20.");)
+	}else if(idade > 21 && idade <= 30){
+		if(idade > 24 && idade <= 30){
+			(alert("A idade é superior a 24 e menor a 30.");)
+		}else if(idade == 22){
+			(alert("A idade é 22.");)
+		}
+	}else{
+		(alert("A idade é superior 30.");)
+	}
+	-----------------------------------------
+	Estrutura Switch(selecção)
+	Usa-se o switch (em relação ao if) quando a condição(expressao) é a mesma, mas podera ter diferentes valores de teste.
+	BREAK: indica paragem de execução na estrutura no ponto onde é invocação.
+	var teste = 2;
+	switch(teste){
+		case 1: alert("teste é igual 1");break;
+		case 2: alert("teste é igual 2");break;
+		case 3: alert("teste é igual 3");break;
+		default: alert("Não é igual a 1, 2 nem 3");
+	}
+	------------------------------------------
+	Grupos de dados com 'cases' multiplos (sem quebras)
+	var teste = "valor";
+	switch(teste){
+		case "valor": alert("teste é igual 1");break;
+		case "vasdaksda": alert("teste é igual 2");break;
+		case "vasdasd": alert("teste é igual 3");break;
+		case "vasdasdasd": alert("teste é igual 1");break;
+		case "vasdasdasasddd": alert("teste é igual 2");break;
+		case "sjkgdfsdfyusdfbsdfb": alert("teste é igual 3");break;
+		default: alert("Não é igual a 1, 2 nem 3");
+	}
+	
+	
+	
+	
+	
 -->
