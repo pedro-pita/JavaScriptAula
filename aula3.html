@@ -98,9 +98,123 @@
 		case "sjkgdfsdfyusdfbsdfb": alert("teste é igual 3");break;
 		default: alert("Não é igual a 1, 2 nem 3");
 	}
-	
-	
-	
-	
-	
+	------------------------------------------------------
+	var estado = prompt("estado?", "Insira quantos filhos tem e se é casado ou solteiro (Ex: casado0filhos, solteiro1filho)");
+	switch(estado){
+		case "casado0filhos":
+		case "casado1filho":
+		case "casado1filho": alert("Estado: Casado"); break;
+		case "solteiro0filho":
+		case "solteiro1filho":
+		case "solteiro1filho": alert("Estado: Solteiro"); break;
+		default: alert("Estado nã indicado!!");
+	}
+	NOTA: Forçar a quebra mesmo em grupos de escolha:
+		Se por algum motivo fosse necessario uma determinada escolja, por exemplo 'case "valoriza":'
+		a linha passaria a ser a seguinte:
+		case "valoriza":break;
+		
+	**********************************************
+	Estruturas de repetiçao, repetem um ciclo enquanto a condiçao for verdadeira.
+SINTAXE:
+for(iniciar variavel; condiçao; incremento);
+Exemplo:
+for(var i = 0; i < 10; i++) {
+	alert("O valor do indice é:"+i);
+}
+NOTA: Procedimento da rotina - Iniciar a var, verificar a condiçao da var como verdadeira, executar a açao e incrementar a var de ciclo
+----------------------------------------------------
+
+Contagem
+var contagem = "Contagem";
+for(var i = 0; i < 10; i++) {
+	contagem += i;
+	alert(i);
+}
+
+ou
+
+var contagem = "Contagem";
+for(var i = 0; i < 10; i++) {
+	if( i < 9)
+		contagem += i + "->";
+	if( i == 9)
+		contagem += i;
+	alert(i);
+}
+----------------------------------------------
+Verificar pares e impares
+var par = "Par:";
+var impares = "Impares:";
+for(var i = 0; i <= 40; i++) {
+	//if(!(i%2))
+	if(i % 2 == 0){
+		if(i == 40) {
+			par += i;
+		} else  {
+			par += i + "-";
+		}
+	} else {
+		impares += i;
+	}
+}
+alert(part);
+alert(impares);
+
+NOTA: Cuidado com instruçoes de ciclo infinito, uma vez que o laço seria executado de forma permanente.
+
+		-EXEMPLO:
+		for(var i = 0; true; i++);
+-----------------------------------------------------------
+Repetiçao em ciclo de objetos
+for in(repetiçao em objetos)
+Instruçao:
+for(variavel in objeto) {
+	codigo de execuçao(instruçao) em objetos
+}
+Criar um objeto
+var Pessoa = { nome: "Sergio", idade:"22",morada:"Funchal"};
+alert(typeof(Pessoa));
+alert(typeof(Pessoa.nome));
+for(var atributos in Pessoa) {
+	alert(atributos+":"+Pessoa[atributos]);
+}
+
+Repetiçao com estrutura while
+SINTAXE:
+while(){........}
+Conversao ao for:
+
+Rotina:
+A estrutura realiza o teste antes de executar o codifo de açao, contino no bloco de instruçoes, a incializaçao da variavel é fora do ciclo, o incremento feito na rotina de açoes
+var i = 0;
+while(i < 10) {
+	alert(i);
+	i++;
+}
+conversao do for:
+for(var i = 0; i < 10; i++) {
+	alert(i);
+}
+
+Para while:
+var i = 0;
+while(i < 10) {
+	alert(i);
+	i++;
+}
+Exemplo:
+
+var i = 0;
+var contagem = "contagem";
+while(i < 10) {
+	contagem += 1;
+	i++;
+}
+alert(contagem);
+------------------------------------------------
+do { .......... codigo ................ } while(teste);
+Rotina: 
+faz a execuçao do codigo apenmas no final do ciclo , isto, executa pelo menos uma vez.
+Usamos quando nao sabemos o numero minimo de execuçoes de laço(loop).
 -->
