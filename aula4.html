@@ -1,93 +1,76 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="text/javascript" src="./js/aula4.js"></script>
 		<meta charset="UTF-8">
 		<title>Modelo</title>
+		<script type="text/javascript" src="./js/aula4.js">
+		
+		</script>
 	</head>
 	<body>
 	</body>
-</html>
+</html>	
 
 <!--
-	
-Estrututa de tratamento de excecoes(erros).
-Classe Objeto Error- propriedades.
-Alguma metodos/ prop.
+Estrutura de tratamento de exececoes(erros).
+Classe Objeto Error-propriedades.
+Alguns Métodos/prop.
 .message() - Retorna a msg de erro.
-.name - Retorna o nome ou o tipo de erro.
-.toString - Retorna o tipo e a menssagem de erro.
+.name - Retorna o nome ou tipo de erro
+.toString - Retorna p tipo e a mensagem do erro
 
-
-----------------------------------
 Tipos de erro da propriedade name
-----------------------------------------
+----------------------
 RangeError
-
 Este erro ocorre quando uma função recebe um argumento que excede os limites permitidos. Por exemplo, este erro ocorre se tentar construir um objeto Array com uma quantidade de itens que não seja um valor inteiro positivo válido.
----------------------------------------------
+-----------------------
 ReferenceError
-
 Este erro ocorre quando uma referência inválida é detetada. Este erro ocorrerá, por exemplo, se uma determinada referência for null.
------------------------------------------
+-------------------
 SyntaxError
-
 Este erro ocorre quando o código fonte é analisado e percebe-se que este não segue a sintaxe correta da linguagem. Este erro ocorrerá, por exemplo, se a função eval for chamada com um argumento que não é considerado um código JavaScript válido.
-----------------------------------------------
+-------------------
 TypeError
-
 Este erro ocorre sempre que o tipo atual do operando não se encaixa no tipo esperado. Um exemplo disso ocorre quando uma chamada de função é feita em algo que não é um objeto ou é um objeto mas não suporta tal tipo de chamada.
------------------------------------------------
+---------------------
 URIError
-
 Este erro ocorre quando um Identificar Uniforme de Recursos - Uniform Resource Indicator (URI) inválido é detetado. Por exemplo, este erro pode ocorrer quando um caractere ilegal é encontrado numa string a ser codificada ou decodificada.
--------------------------------------------------------
+---------------------------
+Estrutura/Sintaxe do controle de Erros
 
-Estrutura/Sintaxe do controlo de Erros
-
-try{
-	codigo critico
-}catch(Indtificador de erro){
-	rotina de informacao de erros
-}
-
-Rotina de execucao:
-A estrutura tenta executar o codigo critico, caso retorne erro, sera tratado ao trecho catch() que captura esse rro e o devolve sobre a forma colocada no parametro do catch.
-
-try(){
-	var x = y;
-}catch(erro){
-	alert(erro.name + "-" + erro.message);
-	//alert(erro.toString());
-}
-
-------------------------------------------------------
-
-try(){
-	var x = y;
-}catch(erro){
-	alert(erro.toString());
-}finally{
-	alert("Fim do tratamento de Erro.");
-}
-
--------------------------------------------------------
-throw(lancar) - lanca uma excepcao, onde prevemes que de alguma forma ira(podera) dar erro
-
-var x = prompt("Numero maior que 10");
-
-try{
-	if(x < 10){
-		throw "O numero introduzido foi inferior a 10";
-	}else if(x < 5){
-		throw "ERROR INTERNAL: 505"
+	try{
+		codigo critico.
+	}catch(identificador de erro){
+		rotina de informacao de erro
 	}
-}catch(erro){
-	if(erro == "ERRO INTERNAL: 505"){
-		alert("Valor inserido inferior a 5");
+
+Rotina de excecao:
+A estrutura tenta executar o codigo critico, caso retorne erro, sera tratado no trecho catch() que captura esse erro e o devolve sobre a forma colocada no parametro do catch.
+
+	try(){
+		var x=y;
+	}catch(erro){
+		alert(erro.name + "-"+erro.message);
+		//alert(erro.toString());
+	}finally{
+		alert("Fim do tratamento de Erro.");
 	}
-	//alert(erro.toString());
-}
+------------------------------
+throw(lancar) - lanca  uma excepcao, onde prevemos que de alguma forma ira(podera) dar erro.
 
-
+	var x = prompt("Numero maior que 10.");
+	try{
+		if(x<10){
+			throw "numero maior que 10";
+		}	
+		if(x < 5){
+			throw "Error internal: 505";
+		}
+	}catch(erro){
+		if(erro == "ERROR INTERNAL: 505"){
+			alert("Valor inferior a 5");
+		}	
+		//alert(erro.toString());
+	}finally{
+		alert("Passou no teste com nota minima.");
 -->
