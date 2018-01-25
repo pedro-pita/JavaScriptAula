@@ -136,7 +136,6 @@ substring(from, [to])-Retorna os caracteres em uma string entre os valores de "f
 toLowerCase()-Retorna a string convertida em minúsculas.
 toUpperCase()-Retorna a string convertida em maiúsculas.
 
-
 Exemplo:
 var exemplo = "JavaScript";
 document.write("Texto escrito com o metodo big-> "+exemplo.big()+"<br/>");
@@ -178,34 +177,79 @@ var nivel = new Array("nivel 1","nivel 2","nivel 3");//construtor por atribuicao
 var turma = new Array(3);//construtor por dimensionamento
 
 OUTROS EXEMPLOS DE CRIACAO:
-turma[0] = "prog";
-turma[1] = "informatica";
-turma[2] = "saude";
+	turma[0] = "prog";
+	turma[1] = "informatica";
+	turma[2] = "saude";
 //OU
-var option = ["get","post","head","options"];//forma literal ou primitiva
+	var option = ["get","post","head","options"];//forma literal ou primitiva
 ------------------------------------------------------------------
 Metodos
 join(separacao) - junta sequencialmente os elementos de um array o caratere/s dados por separacao.
 Por omissao de separacao é usada a virgula por defeito.
 Exemplo:
-var nivel1 = new Array("baixo","media","alto");
-var str_1 = nivel.join();	//res: "baixo,media,alto"
-var str_2 = nivel.join(", ");//res: "baixo, media, alto"
-var str_3 = nivel.join("/");//res: "baixo/media/alto"
+	var nivel1 = new Array("baixo","media","alto");
+	var str_1 = nivel.join();	//res: "baixo,media,alto"
+	var str_2 = nivel.join(", ");//res: "baixo, media, alto"
+	var str_3 = nivel.join("/");//res: "baixo/media/alto"
 
 ------------------------------------------------------------------
 length - Indica o numero de elementos de um determinado array. Em casos externos pode ser usado para diminuir a quantidade de elementos do array.
 Exemplo:
-var nivel = new Array("baixo","media","alto","muito alto");
-alert(nivel.length);
+	var nivel = new Array("baixo","media","alto","muito alto");
+	alert(nivel.length);
 Forcar o dimensionamento
-nivel.length = 3;
+	nivel.length = 3;
 -------------------------------------------------------------------
 pop() - REmove e retorna o ultimo elemento de um determinado array, reduzindo o tamanho 
 Exemplo:
-var nivel = new Array("baixo","alto","muito alto");
-var eliminado = nivel.pop();//vai eliminar o valor "muito alto"
+	var nivel = new Array("baixo","alto","muito alto");
+	var eliminado = nivel.pop();//vai eliminar o valor "muito alto".
+-------------------------------------------------------------------
+push()-Adicionar um ou mais alementos(valor1,valor2,valorn), no final dum array, reotnado o novo tamanho.
+Exemplo:
+var nivel = new Array("baixo","media","alto","muito alto");
+var novo = nivel.push("mais 1","mais 2","mais 3");
+-*---------------------------------------------------------
+reverse()-Inverte a ordem dos elementos.
+Exemplo:
+var nivel = new Array("baixo","media","alto");
+nivel.reverse();//nivel[0]="alto";nivel[1]="media";
+nivel[2]="baixo"
+-----------------------------------------------------------------
+shift()-Remove o primeiro elemento de dum array, retorna esse elemento
+Exemplo:
+var nivel = new Array("muito baixo","media","alto");
+removido = nivel.shift();//muito baixo
+------------------------------------------------------------
+toString()-Retorna uma string com os elementos dispostos sequencialmente e separados por virgula
+Exemplo:
+	var num = new Array("10","20","30","40");
+	var str = num.toString();//str vai conter = "10, 20, 30, 40"
+------------------------------------------------------------------
+Objet que permite manipular uma data
+Este objeto ira manipular a data de sistema(a data atual do sistema que role o JS no momento da execucao do script, isto é, a data do SO da maquina que execute o navegador).
+sintaxe:
+var nomeDate = new Date();
+//A date de sistema é em funcao do dia padrao: este dia é 01/01/1970
+Exemplo:
+var sata = new Date();
+document.write("Date: "+data);
 
+	var n1Data = new Date(2132132);//construtor por atribuicao simples, calcula em funcao de 01/01/1970
 
+----------------------------------------------------------------
+Construtor por atribuicao simples e cadeia de caraters(string)
+	var dataString = new Date("Jan-01-2001 12:12:12);
 
+OU
+	Date(year,month,day,hours,minutes,seconds,milliseconds);
+	var DataE = new Date(2017,02,12,14,15,30,2000);
+	
+//Exemplo
+	var hoje = new Date();
+	var h=hoje.getHours();
+	var m = hoje.getMinutes();
+	var s = hoje.getSeconds();
+	document.write("Hora:"+h+");
+	
 -->
