@@ -4,7 +4,6 @@
 		<meta charset="UTF-8">
 		<title>Aula 5 - Objectos</title>
 		<script type="text/javascript"  src="./js/aula5.js">
-		
 		</script>
 	</head>
 	<body>
@@ -251,5 +250,44 @@ OU
 	var m = hoje.getMinutes();
 	var s = hoje.getSeconds();
 	document.write("Hora:"+h+");
+	
+	//-----------------------------------
+	//CApturar o dia de semana: getDay()
+	var dias_semana = ["d","seg","ter","qua","quint","sex","sab"];
+	var hoje = new Date();
+	document.write("Dia da semana:" + dias_semana[hohe.getDay()]);
+	//------------------------------------
+	var hoje = new Date();
+	document.write("Data por forma aninhada:" + hoje.toLocaleDateString());;// 25/01/2018
+	*************************************************
+	Objeto Math- Manipulação de operações matematicas, nao tem construtor este obejeto.
+	
+	As prop. usados pelo objeto, são constantes matematicas
+	Exemplo:
+	var pi = Math.PI;
+	alert(pi);
+	//Metodos 
+	abs(x) - Retorna o valor absoluto de x -> Math.abs(-7,25) R=7
+	ceil(x) - Devolve x, arredondando para cima Math.ceil(1.4) R=2
+	floor(x) - DEvolve x, arrendondado para baixo Math.floor(1.7) R=1
+	pow(x,y) - Devolre o valor de x elevado a y Math.floor(3,4) R=81
+	random() - Devolve um valor aliatorio.
+	round(x) - Arrendonda x Math.round(2.7) R:3 ou Math.round(2.4) R:2
+	/*Exemplos*/
+	var pi = Math.PI;
+	var absN = Math.abs(-5.16);
+		........
+	var alert = Math.random(); //varia entre 0 e 1
+	ver n = alert.toFixed(2); //Cast para o Objeto Number
+	var aleat10 = Math.random()*10; //entre 0 e 9
+	var exemplo = Math.florr(Math.random()*10)+1;//1 e 10
+	
+	document.write("PI" + pi + "<br />";
+	document.write("absN" + absN + "<br />";
+	document.write("alert" + alert + "<br />";
+	document.write("n" + n + "<br />";
+	document.write("aleat10" + aleat10 + "<br />";
+	document.write("exemplo" + exemplo + "<br />";
+	
 	
 -->

@@ -202,3 +202,24 @@ document.write("<br/>Pessoa->nome: "+vPessoa.nome);
 document.write("<br/>Pessoa->nome: "+vPessoa.idade);
 document.write("<br/>Pessoa->nome: "+vPessoa.morada);
 
+//date
+var data = new Date();
+document.write("<br />Data: " + data);
+var dataM = new Date(1000*60*60*24*365); //1 ano em relação a 01/01/1970
+document.write("<br />Data: " + dataM);
+var dataE = new Date(2012, 02, 12, 12, 14, 1000);
+document.write("<br />Data: " + dataE);
+var hoje = new Date();
+var h = hoje.getHours();
+var m = hoje.getMinutes();
+var s = hoje.getSeconds();
+document.write("<br />Data de hoje: " + h + ":" + m + ":" + s);
+//------------------------------------------
+var dias_semana = {"domingo","segunda", "terça", "quarta", "quinta", "sexta", "sabado"];
+var hoje = new Date();
+document.write("<br /> O dia da semana é: " + dias_semana[hoje.getDay()]);
+ //----------------------------------------------
+ var hoje = new Date();
+ document.write("<br /> Data no formato DD/MM/AAAA" + hoje.toLocateString());
+ 
+
