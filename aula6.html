@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Modelo</title>
+		<script type="text/javascript"  src="./js/aula6.js">
+		
+		</script>
+	</head>
+	<body>
+		<p><b>Estados</b>
+			<input type="button" value="Atualizar a pagina" onclick="atualizarPagina()">
+			<input type="button" value="Retrocer" onclick="retroceder()">
+			<input type="button" value="Avancar" onclick="avancar()" >
+			<input type="button" value="Ir para" onclick="irPara()" >
+			<input type="button" value="Retroceder dois niveis" onclick="retorceder2Niveis()" >
+		</p>
+		<p><b>Contagens</b>
+			<input type="button" value="Iniciar contagem" onclick="iContagem()" >
+			<h1>Contador:<span id="txt"></span></h1>
+			<h2>Aguardar:<span id="txt1"></span></h2>
+			<input type="button" value="Ir para" onclick="irPara" >
+		</p>
+		<div>
+			<input type="button" value="Iniciar" onclick="iniciar()">
+			<input type="button" value="cancelar" onclick="cancelar()">
+			<input type="button" value="iniciar redericionamento" onclick="iniciaRedirecionamento()">
+			<input type="button" value="cancelar redericionamento" onclick="cancelaRedirecionamento()">
+		</div>
+		<div id="relogio">
+			12:12:!2
+		</div>
+		<div>
+			<ul>
+				<li onclick="onClick()">Evento onClick()</li>
+				<li id="refJS">refJS</li>
+				<li>Eu sou mandriao nao faco nada</li>
+			</ul>
+		</div>
+		<img id="rodar" alt="roda">
+	</body>
+</html>	
+
+<!--
+Objeto Function-Funcoes
+Este objeto e usado para criar pequenos para criar pequenos trecos de codigo em contexto.
+Pode retornar um resultado(denonimando com retorno), ou sem retorno(rotina sem retorno).
+
+Sao usadas tambem, para respodner a evetor lancados pelo html(click por exemplo);#.
+Funcoes podem receber argumentos de modo s serem processados na rotina.
+
+Sintaxe base:
+Funcao sem retorno:
+function nomeFuncao(){
+
+}
+
+Funcao com retorno:
+function nomeFunction(){
+	return valorReturn();
+}
+
+Funcao sem retorno com argumentos:
+function nomeFuncao(varArgumento, varArf2){
+	return varArgument;
+}
+----------------------------------------------------------------------------------
+function nomeFuncao(){
+	document.write("Funcao sem parametros");
+}
+
+function calcularSoma(){
+	return 10+3;
+}
+
+document.write("O valor da soma e: "+calcularSoma());
+
+functionimprime(txt){
+	document.write(txt+"<br />");
+}
+
+function multiplica(x,y){
+	var res = x*y;
+	return res;
+	return y;
+}
+
+//-----------------------------------------------
+Ciar uma funcao atraves de um construtir
+var multiplica1 = new 
+Function("v1","v2","return v1*v2;");
+var resultado = multiplica(3,8);
+//-----------------------------------------------
+Cria atraves da forma literal - Sendo mesmo a ais usada, uma vez que a integracao de manipuladores de eventos e nativa
+var multiplica2 = function(v1,v2){
+	return v1*v2;
+}
+
+multiplica(5,8);
+*********************************************************************
+
+<ul>
+	<li onclick="onclick()">Evento onclick</li>
+	<li id="refJS">refJS</li>
+	<li>Eu sou mlandrao nao faco nada</li>
+</ul>
+
+
+//********************************************************************************
+Nota:
+Esta e uma ma pratica, uma vez que devemos defenir os elementos em funcao da sua declaracao(semantica), como tal, devemos ter um ficheiro html como apenas  tags html, css com apenas, JS apenas com rotina
+**********************************************************************************
+Associar o elemento atraves da indetificacao do mesmo a rotina de execucao.
+Para tal usamos o metodos do objeto do documento:
+Sintaxe:
+document.getElementById()
+Exemplo: identificado o li pelo nome 'refJS'
+document.getElementById("refJS").onclick = function(){alert("Fui referenciado de forma correta");}
+
+//No teste verificamos que retornou um erro, que nada mais e que o momento de leitura do JS.
+Isto aconteceu: uma vez que o JS e importado antes da criacao da lista.
+
+Possiveis silucoes:
+1 - Invocar depois da criacao da lista.
+2 - Atraves do objeto window recorrendo ao metodo onload(indica o total carregamento da pagina)
+Sintaxe:
+window.onload;
+
+************************************************************************************8
+BOM(Browser Object Model)
+
+Ojeto JS  que descreve o browser, desta forma acedemos as prorpiedades e funcoes do navegador.
+CUIDADO, este objeto nao e padronizado pelas normas web (w3c), pode s=nao ser suportado por todos obrowsers.
+
+
+-->

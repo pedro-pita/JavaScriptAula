@@ -167,7 +167,7 @@ for(var i=nome.lenght;i>0;i--){
 	copy[] = nome[i-1];
 }
 copy = copy.join("");
-document.write("Exemplo de string invertida: <br/>Antes-> "+nome+" <br/>Depois-> "+copy);*/
+document.write("Exemplo de string invertida: <br/>Antes-> "+nome+" <br/>Depois-> "+copy);
 //----------------------------------------------------------------
 //Array Avancado - multidimensional
 //sintaxe: var nomeArray = new Array(new Array, new Array);
@@ -200,26 +200,34 @@ console.log(vT[1].lenght);//3
 var vPessoa = {nome:"Sergio",idade:"20",morada:"funchal"};
 document.write("<br/>Pessoa->nome: "+vPessoa.nome);
 document.write("<br/>Pessoa->nome: "+vPessoa.idade);
-document.write("<br/>Pessoa->nome: "+vPessoa.morada);
+document.write("<br/>Pessoa->nome: "+vPessoa.morada);*/
 
+//Capturar o dia da semana: getDay()
+var dias_semana = ["domingo","segunda","terca","quarta","quinta","sexta","sabado"];
+var hoje = new Date();
+document.write("Dia da semana: " + dias_semana[hoje.getDay()]);
+//-----------------------------------------
+var hoje = new Date();
+document.write("data por forma aninhada: "+hoje.toLocaleDate);//25/01/2018
 //date
 var data = new Date();
-document.write("<br />Data: " + data);
-var dataM = new Date(1000*60*60*24*365); //1 ano em relação a 01/01/1970
-document.write("<br />Data: " + dataM);
-var dataE = new Date(2012, 02, 12, 12, 14, 1000);
-document.write("<br />Data: " + dataE);
+document.write("<br/>Data: "+data);
+var dataM = new Date(1000*60*60*24*365);// 1 ano em relacao a 01/01/1970
+document.write("<br/>Data: "+dataM);
+var dataE = new Date(2012,02,12,12,14,1000);
+document.write("<br />Data: ."+dataE);
 var hoje = new Date();
 var h = hoje.getHours();
-var m = hoje.getMinutes();
+var m =	hoje.getMinutes();
 var s = hoje.getSeconds();
-document.write("<br />Data de hoje: " + h + ":" + m + ":" + s);
-//------------------------------------------
-var dias_semana = {"domingo","segunda", "terça", "quarta", "quinta", "sexta", "sabado"];
+document.write("<br />Data de hoje: "+h+":"+m+":"+s);
+//-----------------------------------------------------------
+var dias_semanas = ["domingo","segunda","terca","quarta","quinta","sexta","sabado"];
 var hoje = new Date();
-document.write("<br /> O dia da semana é: " + dias_semana[hoje.getDay()]);
- //----------------------------------------------
- var hoje = new Date();
- document.write("<br /> Data no formato DD/MM/AAAA" + hoje.toLocateString());
- 
+document.write("<br />O dia da semana e: "+dias_semana[hoje.getDay()]);
+//------------------------------------------------------------------------
+var hoje = new Date();
+document.write("<br />Data no formato DD/MM/AAAA: "+hoje.toLocaleString());
+
+
 
