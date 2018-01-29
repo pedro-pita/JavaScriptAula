@@ -1,4 +1,4 @@
-function fsemRetorno(){
+/*function fsemRetorno(){
 	document.write("Funcao sem parametros<br/>");
 }
 
@@ -37,19 +37,18 @@ imprime(resM1);
 imprime(mult2(5,89));
 //Click no elemento da lista Evento onClick 
 function onClick(){
-	
-	alert("Evento de clique, atraves de atributos(onClick) da tag html'li'");
-	
+	alert("Evento de clique, atraves de atributos(onClick) da tag html'li'");	
 }
-document.getElementById("refJS").onclick = function(){alert("Fui referenciado de forma correta");}.
-
+document.getElementById("refJS").onclick = function(){
+	alert("Fui referenciado de forma correta");
+}
 window.onload = function(){document.getElementById("refJS").onclick = function(){
 	alert("Fui referenciado de forma correta");
-};
+};*/
 
 //----------------------------------------------------------------------------------------------------
 
-window.onload{
+/*window.onload = function(){
 	alert("Ola");
 	confirm("tem a certeza?");
 	prompt("Indique o seu nome");
@@ -57,5 +56,33 @@ window.onload{
 	document.getElementById("refJS").innerHTML = "Ola fui inserido via JS";
 	alert("appName"+navigator.platform);
 	alert("appName"+navigator.appVersion);
-	alert("appName"+navigator.appAgent);
+	alert("appName"+navigator.appAgent);	
+	var plugins = navigator.plugins;
+	var p = "";
+	for(var i = 0; i < plugins.lenght; i++){
+		p += plugins(i).name + "\n";
+	}
+	alert(p);
+	//objeto de localização de informação relativa a localização do documento
+	document.write(location.href);
+	document.write("<br>");
+	document.write(location.protocol);
+}*/
+//Atualizar a pagina, usamos o metofo reload() 
+function atualizarPagina(){
+	window.location.reload();
+}
+
+alert("W:" + screen.width + " H"+ screen.height);
+
+function retroceder(){
+	window.history.back();
+}
+
+function avancar(){
+	window.history.forward();
+}
+
+function irPara(){
+	window.history.go(-2);
 }

@@ -132,5 +132,37 @@ BOM(Browser Object Model)
 Ojeto JS  que descreve o browser, desta forma acedemos as prorpiedades e funcoes do navegador.
 CUIDADO, este objeto nao e padronizado pelas normas web (w3c), pode s=nao ser suportado por todos obrowsers.
 
+/*****************************************************************************************
 
+//Atualizar a pagina, usamos o metofo reload() function atualizarPagina(){
+	window.location.reload();
+}
+
+<input type="button" value="Atualizar a pagina" onClick="atualizarPagina()"; />
+
+/*****************************************************************************************
+Objeto screen - informação relativa ao ecrã.
+alert("W:" + screen.width + " H"+ screen.height);
+/****************************************************************************************
+Objeto History - informação referente ao historico de navegação, herda do objeto window
+
+function retroceder(){
+	window.history.back();
+}
+
+<input type="button" value="retroceder" onCLick="retroceder"
+onClick="retroceder();" />
+
+/******************************************************************************************
+function avancar(){
+	window.history.forward();
+}
+<input type="button" value="Avançar" onClick="avancar();" />
+/**************************************************************************************
+Avançar ou retroceder varios niveis
+function irPara(){
+	window.history.go(-2);
+}
+
+<input type="button" value="Ir para" onClick="voltar2N();" />
 -->
