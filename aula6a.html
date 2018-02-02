@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Modelo</title>
+		<script type="text/javascript"  src="./js/aula6a.js">
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>	
+
+<!--
+O JS e distinto na criacao de objetos proprios(em realcao e linguagens como Java ou C++ por exemplo), uma vez que nao possui uma defenicao formal da classe.
+
+No entatno possui o seu proprio tipo de heranca baseado em prototipos.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Funcao construtora e atributos(prop.) - Classe e atributos.
+
+Nota: A palavra reservada 'this': reponsavel por iniciar  o objeto.
+
+Exemplo:
+function tempo(velMax){
+	this.velocidadeMax = velMax;
+	this.ligado = false;
+}
+*************************************************************************************************************************************************************
+Instancias - Criar o objeot, isto e, instanciar a classe, para tal usamos o operador nativo de instanciacao 'new'.
+Sintaxe:
+var nomeObjeto = new Objeto();
+Exemplo var carro = new Carro(350);
+--------------------------------------------------------------------------------------------
+aCESSO AOS TRIBUTOS DA Classe
+O acesso as prop. do objeto criado e feito usando o operador '.'.
+Sintaxe:
+variavelObjeto.nomeAtributos;
+
+Exemplo
+document.write(carro.velocidadeMax);
+------------------------------------------------------------------------------------------------
+Atributos em tempo de execucao
+O JS permite criar atributos em tempo de execucao (mesmo depois do objeto depois de ser criado).
+
+Sintaxe:
+variavel.novoAtributo = valorAtributo
+
+Exemplo
+carro.cor = "azul";
+-------------------------------------------------------------------------------------------------
+Metodos
+-------------------------------
+Metoods em JS sao funcoes invocadas pelos objetos, deste modo criar um novo metodo par ao objeto e simplesteme invocar o operador '.' como acontece em relacao aos atributos.
+-------------------------------
+Criacao pela prop. prototype(so pode ser executado apenas pelo modelo)
+-------------------------------
+function liga(){
+	this.ligado = true;
+}
+Carro.prototype.ligar = liga;
+-------------------------------------
+Adicionar ao objeto em particular.
+var carro2 = new Carro(123);
+carro2.ligar =  liga;
+---------------------------------------------
+Na propria estrutura da classe
+function liga(){
+		this.ligado = true;
+}
+
+function Mota (velMax){
+	this.velocidadeMax  = velMax;
+	this.ligado = false;
+	this.ligar = liga;
+}
+NOTA: THIS 'e substituido pelo objeto que ivoca a funcao.
+Exemplo:
+var mota = new Mota(45);
+document.write(mota.ligado); //falso
+mota.ligar();//atributo ligado para true
+document.write(mota.ligado); //true
+---------------------------------------------------
+Literal do objeto - Defenido pela declaracao de uma lista de pares CHAVE:VALOR
+
+Sintaxe:
+var Objeto = {
+				nomeAtributos1:valorAtribuido1
+				nomeAtributos2:valorAtribuido2
+				nomeAtributos3:valorAtribuido3
+				grupoAtributo:{ nomeAtributos1:valorAtribuido1,
+								nomeAtributos1:valorAtribuido1,
+							},
+				grupoAtributo:{ nomeAtributosG21:valorAtribuido21,
+								nomeAtributosG22:valorAtribuido22,
+							}
+			}
+	Exemplo:
+		var Familia = {
+						nomeFamilia:"Araujos",
+						qtAgregado: 6,
+						vencimentoAgregado: 100,
+						filho1: {
+									nomeFilho:"Sergio",
+									idadeFilho:23
+						}
+						filho2: {
+									nomeFilho:"Ana",
+									idadeFilho:53
+						}
+						filho3: {
+									nomeFilho:"Cecilia",
+									idadeFilho:43
+						}
+						avo: {
+									nomeAvo:"Antonieta",
+									idadeFilho:120
+						}
+					}
+	document.write("<br/>" 
+	+ Familia.nomeFamilia + " tem no agregado" 
+	+ Familia.qtAgregado + " elementos, vivem com" 
+	+ Familia.vencimentoAgregado+ "Euros, o primeiro filho chama-se" 
+	+ Familia.filho1.nomeFilho+ "e tem" 
+	+ Familia.filho1.idadeFilho + " anos");
+	
+	--------------------------------------------------------------------------------------
+	
+	Composicao dos objetos -O objeto tem na sua composicao outros objetos para formara estrutura.
+	Exemplo:
+	function Familia (nome, ven){
+		this.nome = nome;
+		this.vencimento = ven;
+	}
+	
+	function Filho (n, i){
+		this.nome = n;
+		this.idade = i;
+	}
+	
+	var familia = new Familia("Araujos",1000):
+	var familia2 = new Familia("Pitazinhos",20000);
+	
+	var f1 = new Filho ("Sergio",46);
+	var f2 = new Filho ("Ana",14);
+	
+	familia.filho1 = f1;
+	familia.filho2 = f2;
+	familia2.filho1 = f2; //filho 1 tambem 'e filho da segunda familia
+	
+	document.write("<br/>" 
+	+ familia.nome + " vivem com"
+	+ familia.vencimento + "Euros, o filho 'e o"
+	+ familia.filho1.nome + " e tem " 
+	+ familia.filho1.idade + " anos");
+	----------------------------------------------------------------------------
+	Encapsulaento - esconder informacao no objeto.
+	Em js o encapslamento em popr. de uma classe usa -se a palavra reservada 'var' ao inves do 'this'
+	
+	Exemplo:
+	function Aquecedor (temperatura){
+		//variaveis provadas (encapsulamento)
+		var temperaturaMaxPermitida = 40;
+		var temeraturaMedia = 25;
+		//Se a temperatua > 0 && temperatua <= temperatuaMaxPermitida){
+			this.temperatua = temperatura;
+		}else{
+			//Se for inferior a 1 ou superior a 40, definimos a temperaturaMedia
+			this.temperatura = temeraturaMedia;
+		}
+		this.ligado = false;
+		//Metodo, defenido pelo literal da funcao
+		this.ligar = function(){
+			this.ligado = true;
+		}
+	}
+	var aquecer = new Aquecedor(12);
+	document.write("<br />"+aquecedor.temperatura);//12
+	
+	document.write("<br />"+aquecedor.temperaturaMaxPermitida);//UNDEFINED, UMAA VEZ QUE O VAR TORNA O ATRIBUTO PRIVADO.
+	*****************************************************************
+	hERANCA O OBJETO HERDA ACOES E ESTADOR.
+	exemplo
+	
+	function Pessoa(){
+		this.nome="Sem nome";
+		this.temFilhos = false;
+		this.criarFilhos = function(){
+			this.temFilhos = true;
+		}
+		this.retirarFilhos = function(){
+			this.temFilhos = false;
+		}
+	}
+	function Aluno(nota){
+		var notaMaxExame = 20;
+		var notaMinExame = 7;
+		var vaiExame = false;
+		
+		if(nota > 7 && nota <= notaMaxExame){
+			this.vaiExame = vaiExame;
+		}else{
+			this.vaiExame = true;
+		}
+	}
+	
+	Aluno.prototype = new Pessoa();
+	va aluno = new Aluno(6);
+	document.write("<br/>"+aluno.vaiExame);
+	document.write("<br/>"+aluno.notaMinExame);
+	document.write("<br/>"+aluno.notaMaxExame);
+	document.write("<br/>"+aluno.temFilhos);
+	aluno.criarFilhos();
+	document.write("<br/>"+aluno.temFilhos);	
+	
+	
+-->
