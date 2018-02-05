@@ -32,5 +32,5 @@ function lerCookie(name){
 2-gravamos ovamente a cookie, fazemos uso da funcao de gravacao, no entanto, indicamos uma data invalida(-1), desta dorma o argumento expires da cookie fica com dara invalida eminando-se*/
 function eliminarCookie(name){
 	gravarCookie(name,'',-1);
-	alert("COOKIE: "+ name + "\nEliminar
+	alert("COOKIE: "+ name + "\nEliminar);
 }
