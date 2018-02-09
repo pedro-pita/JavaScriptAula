@@ -44,9 +44,19 @@ window.onload = function(){
 				//http_request.responseText - devolve a resopsta como texto puro
 				//http_request.responseXML - devolve a resopsta como objeto XML
 				try{
-					//resposta_conteudo.appendChild(document.createTextNode(ajax.responseText));
-					//------------------------------------------------
-					resposta_conteudo.innerHTML = this.responseText;
+					var xml = ajax.responseXML;
+					//devolve o valor do primeiro elemento do xml
+					while(resposta_conteudo.hasChildNodes()){
+						resposta_conteudo.removeChild(resposta_conteudo.lastChild);
+					}
+					var lformando = xml.getElementsByTagName("formando");
+					var i = 0;
+					while(i < lformando.length){
+						var formando = lformando[i].firstChild.nodeValue;
+						resposta_conteudo.appendChild(document.createTextNode(formando));
+						resposta_conteudo.appendChild(document.createElement("br"));
+						i++;
+					}
 				}catch(e){
 					alert(e.toString());
 				}
@@ -54,7 +64,7 @@ window.onload = function(){
 		}// end onreadystatechange
 		try{
 			//iniciar o pedido com o metodo open(metodo de request(POST,GET,etc),URL de requesicao, por defeito executa em modo assincrono(true);
-			ajax.open("POST","./Aula 10 -Material/aula1.html",true);
+			ajax.open("POST","./Aula 10 -Material/file.xml");
 		}catch(e){
 			
 		}
